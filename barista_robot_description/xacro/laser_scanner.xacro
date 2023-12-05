@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name ="barista_robot">
+
+<xacro:macro name="laser_scanner" params="robot_name">
+  <link name="laser_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh 
+                  filename="package://barista_robot_description/meshes/hokuyo3d.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.0206" radius="0.0352"></cylinder>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.3"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+        </inertial>
+    </link>
+
+     <!-- Laser scan plugin -->
+    <gazebo reference="laser_link">
+        <sensor name="sensor_ray" type="ray">
+            <pose>0.0615 0 0.085 0 0 0</pose>
+            <ray>
+            <scan>
+                <horizontal>
+                <samples>360</samples>
+                <resolution>1.0</resolution>
+                <min_angle>-3.14</min_angle>
+                <max_angle>3.14</max_angle>
+                </horizontal>
+            </scan>
+            <range>
+                <min>0.2</min>
+                <max>10</max>
+            </range>
+            </ray>
+            <always_on>true</always_on>
+            <visualize>false</visualize>
+            <update_rate>10.0</update_rate>
+            <plugin name="laser" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>/${robot_name}</namespace>
+                <remapping>~/out:=scan</remapping>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>${robot_name}/laser_link</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+</xacro:macro>
+</robot>
