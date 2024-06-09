@@ -33,7 +33,7 @@ This project is about one robot must attempt to escape, while the other robot ut
 
 ### Software Prerequisites
 * Ubuntu 22.04
-* ROS2 Foxy
+* ROS2 Humble
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
