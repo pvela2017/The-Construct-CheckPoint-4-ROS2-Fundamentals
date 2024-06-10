@@ -2,27 +2,6 @@
 
 <a name="readme-top"></a>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#software-prerequisites">Software Prerequisites</a></li>
-        <li><a href="#hardware-prerequisites">Hardware Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#real-robot">Real Robot</a></li>
-  </ol>
-</details>
-
-
 ## About The Project
 This project is about one robot must attempt to escape, while the other robot utilizes the TF frames to locate and track it. With the help of the TF tree, the pursuing robot can accurately identify the position of the escaping robot and give chase. To achieve this, a robot model ws created using URDF and subsequently refactor it using XACRO macros. Additionally, an algorithm that enables a robot to pursue and follow another robot that is attempting to evade capture was implemented.
 
@@ -77,7 +56,7 @@ This project is about one robot must attempt to escape, while the other robot ut
 
 
 <!-- KEYS -->
-## Key topics learnt
+## Key Topics Learnt
 * URDF & XACRO.
 * Simulation of multiple robots.
 * Gazebo plugins.
