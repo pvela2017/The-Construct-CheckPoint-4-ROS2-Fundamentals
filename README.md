@@ -60,4 +60,4 @@ This project is about one robot must attempt to escape, while the other robot ut
 * URDF & XACRO.
 * Simulation of multiple robots.
 * Gazebo plugins.
-* Publish TFs.
+* Get TFs.
